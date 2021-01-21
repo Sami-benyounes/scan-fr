@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
  
 module.exports = {
@@ -30,12 +31,25 @@ module.exports = {
               test: /\.s[ac]ss$/i,
               use: [MiniCssExtractPlugin.loader, 'css-loader','sass-loader'],
             },
+            {
+              test: /\.(png|jpe?g|gif|svg)$/,
+              use:[{
+                  loader: 'file-loader',
+                  options: {
+                    name: '/images/[name].[ext]'
+                  }
+              }],
+            },
         ]
     },
  
     plugins: [
         new MiniCssExtractPlugin({
           filename: '[name].css'
-        })
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, "./public/pages/mangas/mangas.ejs"),
+            filename: 'mangas.html'
+         }),
     ]
 }

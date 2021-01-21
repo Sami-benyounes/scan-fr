@@ -1,0 +1,30 @@
+@import "./_navbar";
+@import "./list-mangas";
+@import "./_manga-progress-chapter";
+@import "./_searchbar";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source sans pro';
+  background-color: aliceblue;
+}
+
+.mangas-container {
+  padding: 40px;
+  max-width: 2000px;
+  margin: 0 auto;
+
+  .main-mangas {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@import "./_responsive";

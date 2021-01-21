@@ -1,0 +1,70 @@
+.manga-progress-chapter {
+  flex-shrink: 1.8;
+  width: 100%;
+  padding-right: 20px;
+
+  h2 {
+    color: #413d52;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 20px 0;
+  }
+
+  .manga-traduction {
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    height: 65px;
+    padding: 0 20px;
+    background: #363638;
+    justify-content: space-between;
+    color: #fff;
+    margin-bottom: 10px;
+
+    .progress-trad {
+      width: 100%;
+
+      .m-etat-name {
+        margin-bottom: 5px;
+        font-weight: bold;
+
+        .m-etat {
+          color: #929292;
+          font-weight: 400;
+        }
+
+        .trad {
+          color: #e36d63;
+        }
+
+        .edit {
+          color: #d4e369;
+        }
+      }
+
+      .m-progress {
+        width: 100%;
+        height: 10px;
+        border-radius: 100px;
+        background: #fff;
+
+        .m-progress-statut {
+          width: 100%;
+          height: 100%;
+          background: #929292;
+          border-radius: 100px;
+        }
+
+        .trad {
+          width: 14.28%;
+          background: #e36d63;
+        }
+
+        .edit {
+          width: calc(14.28%*4);
+          background: #d4e369;
+        }
+      }
+    }
+  }
+}

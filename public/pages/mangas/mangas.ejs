@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <title>Scan.fr</title>
+</head>
+
+<body>
+  <header>
+    <label class="submenu" for="nav">
+      <img src="./images/list.png" alt="">
+    </label>
+    <div class="logo-container">
+      <img class="logo" src="./images/Logo.png" alt="">
+    </div>
+    <input type="checkbox" id="nav">
+    <nav>
+      <div class="navigation">
+        <a href="" class="n-name"><span>Acceuil</span></a>
+        <a href="" class="n-name"><span>Planning</span></a>
+        <a href="" class="n-active"><span>Mangas</span></a>
+        <a href="" class="n-name"><span>Nous rejoindre</span></a>
+      </div>
+      <div class="compte">
+        <a href="" class="connexion"><span>Connexion</span></a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/Sami-benyounes/scan-fr"><i class="fab fa-github-square"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="manga-search">
+    <form class="search-form">
+      <input type="search" value="" placeholder="Search" class="search-input">
+      <button type="submit" class="search-button">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+  </div>
+  <% 
+      var data = [
+      { name: "Ace novel", avancement : "Traduction en cours", image : "./images/ace-novel.png", chapitre: "01", rating : "Tout public"},
+      { name: "Berserk", avancement : "Edition en cours", image : "./images/ace-novel.png", chapitre: "384", rating : "Public averti" },
+      { name: "Black Clover" , avancement : "En attente du prochain chapitre", image : "./images/ace-novel.png", chapitre: "221", rating : "Tout public"},
+      { name: "Blue Lock", avancement : "Traduction en cours", image : "./images/ace-novel.png", chapitre: "101", rating : "Tout public" },
+      { name: "Demon Slayer" , avancement : "En attente du prochain chapitre", image : "./images/ace-novel.png", chapitre: "87", rating : "Tout public"},
+      { name: "Dr. Stone", avancement : "Edition en cours", image : "./images/ace-novel.png", chapitre: "134", rating : "Tout public" },
+      { name: "Haikyuu" , avancement : "En attente du prochain chapitre", image : "./images/ace-novel.png", chapitre: "300", rating : "Tout public"},
+      { name: "Hajime no Ippo" , avancement : "Traduction en cours", image : "./images/ace-novel.png", chapitre: "1324", rating : "Tout public"},
+      { name: "Kenga Ashura" , avancement : "En attente du prochain chapitre", image : "./images/ace-novel.png", chapitre: "62", rating : "Tout public"},
+      { name: "Kingdom" , avancement : "En attente du prochain chapitre", image : "./images/ace-novel.png", chapitre: "760", rating : "Tout public"},
+      ];
+      %>
+  <div class="mangas-container">
+    <div class="main-mangas">
+      <div class="list-mangas">
+        <h2>LISTE DE NOS MANGAS</h2>
+        <% for(var i=0; i < data.length; i++) { %>
+        <a href="" class="manga">
+          <div class="manga-image-info">
+            <div class="m-image">
+              <img src="<%= data[i].image %>" alt="">
+            </div>
+            <div class="m-info">
+              <div class="m-title"><%= data[i].name %></div>
+              <div class="m-sub">Dernier chapitre: <%= data[i].chapitre %></div>
+            </div>
+          </div>
+          <div class="manga-rating">
+            <div class="m-public"><%= data[i].rating %></div>
+          </div>
+        </a>
+        <% } %>
+      </div>
+      <div class="manga-progress-chapter">
+        <h2>AVANCEMENTS DES CHAPITRES</h2>
+        <% for(var i=0; i < data.length; i++) { %>
+        <div class="manga-traduction">
+          <div class="progress-trad">
+            <div class="m-etat-name">
+              <%= data[i].name %> :
+              <% if (data[i].avancement === "Edition en cours") { %>
+              <span class="edit m-etat"><%= data[i].avancement %></span>
+              <%} else if(data[i].avancement === "Traduction en cours"){ %>
+              <span class="trad m-etat"><%= data[i].avancement %></span>
+              <% }else { %>
+              <span class="m-etat"><%= data[i].avancement %></span>
+              <% } %>
+            </div>
+            <div class="m-progress">
+              <% if (data[i].avancement === "Edition en cours") { %>
+              <div class="edit m-progress-statut"></div>
+              <%} else if(data[i].avancement === "Traduction en cours"){ %>
+              <div class="trad m-progress-statut"></div>
+              <% }else { %>
+              <div class="m-progress-statut"></div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
