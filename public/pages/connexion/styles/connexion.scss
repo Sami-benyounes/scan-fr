@@ -1,0 +1,62 @@
+.connexion-container {
+  padding: 40px;
+  max-width: 2000px;
+  margin: 0 auto;
+
+  .connexion-form {
+    background: white;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .41);
+
+    img {
+      margin-bottom: 30px;
+      width: 150px;
+    }
+  }
+}
+
+.co-pseudo,
+.co-mdp {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    color: black;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 17px;
+  }
+
+  input {
+    border: none;
+    padding: 10px;
+    font-family: "Source Sans Pro";
+    font-size: 17px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    background-color: #322d37;
+  }
+}
+
+.connexion-btn {
+  background-color: #ff0040;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-family: "Source Sans Pro";
+  font-size: 17px;
+  cursor: pointer;
+  padding: 10px 50px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 5px;
+
+  &:hover {
+    background-color: #eca29e;
+  }
+}

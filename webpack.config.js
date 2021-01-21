@@ -51,5 +51,17 @@ module.exports = {
             template: path.resolve(__dirname, "./public/pages/mangas/mangas.ejs"),
             filename: 'mangas.html'
          }),
+         new HtmlWebpackPlugin({
+          template: path.resolve(__dirname, "./public/pages/planning/planning.ejs"),
+          filename: 'planning.html'
+       }),
+       new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, "./public/pages/connexion/connexion.ejs"),
+        filename: 'connexion.html'
+     }),
+     new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "./public/pages/nous_rejoindre/nous_rejoindre.ejs"),
+      filename: 'nous_rejoindre.html'
+   })
     ]
 }
