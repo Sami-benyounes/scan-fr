@@ -1,0 +1,20 @@
+.joins-us-box {
+  width: 100%;
+  padding-right: 20px;
+
+  .content {
+    width: 100%;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .41);
+    border-radius: 10px;
+
+    p {
+      a {
+        text-decoration: none;
+        color: #ff0040;
+      }
+    }
+  }
+}
