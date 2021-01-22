@@ -1,0 +1,54 @@
+@import "./last-release";
+@import "./news-trad";
+
+.home-container {
+  padding: 40px;
+  max-width: 2000px;
+  margin: 0 auto;
+
+  .home-bannier {
+    height: 260px;
+    background-color: wheat;
+
+    .bannier-info {
+      margin: 20px;
+      position: absolute;
+
+      .title {
+        background: #1e2834;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        width: 305px;
+        color: #fff;
+        font-size: 30px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+      }
+
+      .sub {
+        text-transform: uppercase;
+        font-weight: 700;
+        width: 305px;
+        color: black;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+      }
+    }
+  }
+
+  .home-mangas-news {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@import "./responsive";
