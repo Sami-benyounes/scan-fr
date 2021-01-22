@@ -8,6 +8,7 @@
   }
 
   header nav {
+    display: none;
     position: absolute;
     background-color: white;
     transform: scaleY(0);
@@ -17,7 +18,6 @@
     align-items: flex-start;
     top: 66px;
     left: 0;
-    transition: transform .12s ease-in-out;
     right: 0;
     padding-bottom: 0;
     transform-origin: top;
