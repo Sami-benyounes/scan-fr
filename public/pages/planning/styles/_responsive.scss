@@ -1,0 +1,21 @@
+@media screen and (max-width: 960px) {
+
+  .planning-container {
+    padding: 40px 10px;
+  }
+
+  .planning-container .main-planning {
+    display: block;
+    padding: 0;
+  }
+
+  .planning-container .main-planning .list-mangas {
+    padding-right: 0;
+    margin-top: 50px;
+  }
+
+  .planning-container .main-planning .list-mangas h2 {
+    font-size: 20px;
+  }
+
+}
