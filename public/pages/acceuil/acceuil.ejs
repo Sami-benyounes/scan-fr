@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <title>Scan.fr</title>
+</head>
+
+<body>
+  <header>
+    <label class="submenu" for="nav">
+      <img src="./images/list.png" alt="">
+    </label>
+    <div class="logo-container">
+      <img class="logo" src="./images/Logo.png" alt="">
+    </div>
+    <input type="checkbox" id="nav">
+    <nav>
+      <div class="navigation">
+        <a href="acceuil.html" class="n-active"><span>Acceuil</span></a>
+        <a href="planning.html" class="n-name"><span>Planning</span></a>
+        <a href="mangas.html" class="n-name"><span>Mangas</span></a>
+        <a href="nous_rejoindre.html" class="n-name"><span>Nous rejoindre</span></a>
+      </div>
+      <div class="compte">
+        <a href="connexion.html" class="connexion"><span>Connexion</span></a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/Sami-benyounes/scan-fr"><i class="fab fa-github-square"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="home-container">
+    <div class="home-bannier">
+      <div class="bannier-info">
+        <div class="title">Nouvelle série</div>
+        <div class="sub">Ace novel</div>
+      </div>
+    </div>
+    <div class="home-mangas-news">
+      <div class="last-release">
+        <h2>Les dernières sorties</h2>
+        <% var data = [
+      { name: "Ace novel", avancement : "Traduction en cours", image : "./images/ace-novel.png", chapitre: "01", release : "2021-1-21 23:00", new : "new"},
+      { name: "Berserk", avancement : "Edition en cours", image : "./images/ace-novel.png", chapitre: "384", release : "2021-1-21 22:00", new : "new" },
+      { name: "Black Clover" , avancement : "En attente du prochain chapitre", image : "./images/ace-novel.png",
+      chapitre:
+      "221", release : "2021-1-21 18:00", new : "new"},
+      { name: "Blue Lock", avancement : "Traduction en cours", image : "./images/ace-novel.png", chapitre: "101",
+      release : "2021-1-21 19:00", new : "new" },
+      { name: "Demon Slayer" , avancement : "En attente du prochain chapitre", image : "./images/ace-novel.png",
+      chapitre:
+      "87", release : "2021-1-21 13:00", new : "new"},
+      { name: "Dr. Stone", avancement : "Edition en cours", image : "./images/ace-novel.png", chapitre: "134", release :
+      "2021-1-21 08:00", new : "new" },
+      { name: "Haikyuu" , avancement : "En attente du prochain chapitre", image : "./images/ace-novel.png",
+      chapitre:"300", release : "2021-1-20 20:00", new : "old"},
+      { name: "Hajime no Ippo" , avancement : "Traduction en cours", image : "./images/ace-novel.png", chapitre: "1324",
+      release : "2021-1-14 20:00", new : "old"},
+      { name: "Kenga Ashura" , avancement : "En attente du prochain chapitre", image : "./images/ace-novel.png",
+      chapitre: "62", release : "2021-1-12 08:00", new : "old"},
+      { name: "Kingdom" , avancement : "En attente du prochain chapitre", image : "./images/ace-novel.png", chapitre:
+      "760", release : "2021-1-1 20:00", new : "old" },
+      ];
+      %>
+        <%
+      function getDaysAgo(date, now = new Date()) {
+
+        
+        const start = now.setHours(0, 0, 0, 0);
+        
+        const diff = start - Date.parse(date);
+        var msPerMinute = 60 * 1000;
+        var msPerHour = msPerMinute * 60;
+        var msPerDay = msPerHour * 24;
+        var msPerMonth = msPerDay * 30;
+        var msPerYear = msPerDay * 365;
+    
+       if (diff < msPerHour) {
+             return Math.round(diff/msPerMinute) + ' minutes';   
+        }
+    
+        else if (diff < msPerDay ) {
+             return Math.round(diff/msPerHour ) + ' heures';   
+        }
+    
+        else {
+            return Math.round(diff/msPerDay) + ' jours';   
+        }
+    }
+      %>
+        <% for(var i=0; i < data.length ; i++) { %>
+        <% if (data[i].new === "new") { %>
+        <div class="home-manga" style="background-color: #eca29e;">
+          <% } else {%>
+          <div class=" home-manga">
+            <% } %>
+            <div class="manga-image-info">
+              <div class="m-image">
+                <img src="<%= data[i].image %>" alt="">
+              </div>
+              <div class="m-info">
+                <% if (data[i].new === "new") { %>
+                <div class="m-title"> 🔥 <%= data[i].name %> <span><%= data[i].chapitre %></span></div>
+                <% } else {%>
+                <div class="m-title"><%= data[i].name %> <span><%= data[i].chapitre %></span></div>
+                <% } %>
+                <div class="m-sub">Dernier chapitre</div>
+              </div>
+            </div>
+            <div class="manga-release">
+              <div class="date">Il y a <%= getDaysAgo(data[i].release, now = new Date()) %></div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <div class="news-trad">
+          <div class="news">
+            <h2>Nos rapides actualités</h2>
+            <% for(var i=0; i < 7; i++) { %>
+            <div class="new-card">
+              <div class="new-info">
+                <div class="new-date">14/10</div>
+                <div class="new-title">Kingdom</div>
+                <div class="new-text">On recrute d'urgence un traducteur japonais / français ! RDV sur twitter ou
+                  discord
+                  !</div>
+              </div>
+            </div>
+            <% } %>
+          </div>
+          <div class="home-progress-chapter">
+            <h2>AVANCEMENTS DES CHAPITRES</h2>
+            <% for(var i=0; i < data.length; i++) { %>
+            <% if (data[i].avancement === "Edition en cours" || data[i].avancement === "Traduction en cours") { %>
+            <div class="manga-traduction">
+              <div class="progress-trad">
+                <div class="m-etat-name">
+                  <%= data[i].name %> :
+                  <% if (data[i].avancement === "Edition en cours") { %>
+                  <span class="edit m-etat"><%= data[i].avancement %></span>
+                  <%} else if(data[i].avancement === "Traduction en cours"){ %>
+                  <span class="trad m-etat"><%= data[i].avancement %></span>
+                  <% } %>
+                </div>
+                <div class="m-progress">
+                  <% if (data[i].avancement === "Edition en cours") { %>
+                  <div class="edit m-progress-statut"></div>
+                  <%} else if(data[i].avancement === "Traduction en cours"){ %>
+                  <div class="trad m-progress-statut"></div>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+            <% }else { %>
+            <div style="display: none;" class="manga-traduction"></div>
+            <% } %>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

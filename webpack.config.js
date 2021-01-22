@@ -62,6 +62,10 @@ module.exports = {
      new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./public/pages/nous_rejoindre/nous_rejoindre.ejs"),
       filename: 'nous_rejoindre.html'
-   })
+   }),
+   new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, "./public/pages/acceuil/acceuil.ejs"),
+    filename: 'acceuil.html'
+ })
     ]
 }
