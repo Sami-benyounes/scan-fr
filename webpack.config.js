@@ -18,12 +18,9 @@ module.exports = {
           {
             test: /\.ejs$/,
             use: {
-              loader: 'ejs-compiled-loader',
+              loader: 'ejs-loader',
               options: {
-                htmlmin: true,
-                htmlminOptions: {
-                  removeComments: true
-                }
+                esModule: false
               }
             }
           },
