@@ -10,11 +10,25 @@
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .41);
     border-radius: 10px;
 
+    h3 {
+      padding: 20px 0;
+      padding-bottom: 0;
+    }
+
     p {
+      margin: 20px 0;
+      text-align: justify;
+
       a {
         text-decoration: none;
         color: #ff0040;
       }
+    }
+
+    ul {
+      padding-left: 40px;
+      margin: 10px 0;
+      margin-bottom: 20px;
     }
   }
 }
